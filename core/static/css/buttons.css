@@ -1,0 +1,28 @@
+.button {
+    border-radius: 4px;
+    padding: 15px 32px;
+    color: white;
+    text-decoration: none;
+    transition-duration: .4s;
+}
+
+.button-add {
+    background-color: green;
+}
+
+.button-add:hover {
+    background-color: #04aa6d;
+}
+
+.button-change {
+    background-color: blue;
+}
+
+.button-change:hover {
+    background-color: blueviolet;
+}
+
+.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
