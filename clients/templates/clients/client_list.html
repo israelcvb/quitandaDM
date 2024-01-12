@@ -1,46 +1,24 @@
+{% extends 'core/base.html' %}
 {% load static %}
-<link rel="stylesheet" href="{% static 'css/buttons.css' %}">
-<style>
-    table {
-        border-collapse: collapse;
-        margin: auto;
-    }
-    th, td {
-        padding: 8px;
-        border: 1px solid #ddd;
-        text-align: left;
-    }
-    th {
-        background-color: #04aa6d;
-        color: white;
-    }
-    tr:nth-child(even) {
-        background-color: #f2f2f2;
-    }
-    tr:hover {
-        background-color: #ddd;
-    }
-    div {
-        background-color: white;
-        margin: 20px;
-        padding: 10px;
-    }
-</style>
-<div>
-    <a href="#" class="button button-add">Cadastrar novo cliente</a>
-</div>
-<table>
+{% block links %}
+    <link rel="stylesheet" href="{% static "css/tables.css" %}">
+{% endblock %}
+{% block content %}
+  <div>
+    <a href="{% url 'clients:add' %}" class="button button-add">Cadastrar novo cliente</a>
+  </div>
+  <table>
     <tr>
-        <th>Nome</th>
-        <th>Endereço</th>
-        <th>Email</th>
-        <th>Telefone</th>
-        <th>Data da última compra</th>
-        <th>Status</th>
-        <th>Ação</th>
+      <th>Nome</th>
+      <th>Endereço</th>
+      <th>Email</th>
+      <th>Telefone</th>
+      <th>Data da última compra</th>
+      <th>Status</th>
+      <th>Ação</th>
     </tr>
     {% for client in object_list %}
-    <tr>
+      <tr>
         <td>{{ client.name }}</td>
         <td>{{ client.address }}</td>
         <td>{{ client.email }}</td>
@@ -48,9 +26,10 @@
         <td>{{ client.last_purchase_date }}</td>
         <td>{{ client.status }}</td>
         <td>
-            <a href="{% url 'clients:client' client.pk %}">Detalhe</a>
-            <a href="#" class="link-add">Editar</a>
+          <a href="{% url 'clients:client' client.pk %}">Detalhe</a>
+          <a href="#" class="link-add">Editar</a>
         </td>
-    </tr>
+      </tr>
     {% endfor %}
-</table>
+  </table>
+{% endblock %}

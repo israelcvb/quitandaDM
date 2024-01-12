@@ -1,0 +1,65 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+    height: 100%;
+    width: 160px;
+    position: fixed;
+    padding-top: 20px;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.content {
+    margin-left: 160px;
+    padding: 0px 10px;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav {padding-top: 15px;}
+    .sidenav a {font-size: 18px;}
+}
+
+#mySidenav a {
+    position: absolute;
+    left: -140px;
+    transition: 0.3s;
+    padding: 15px;
+    width: 100%;
+    text-decoration: none;
+    font-size: 20px;
+    color: white;
+    border-radius: 0 5px 5px 0;
+}
+
+#mySidenav a:hover {
+    left: 0;
+}
+
+#home {
+    top: 20px;
+    background-color: #04aa6d;
+}
+
+#clients {
+    top: 80px;
+    background-color: #2196f3;
+}
+
+#products {
+    top: 140px;
+    background-color: #f44336;
+}
+
+#sales {
+    top: 200px;
+    background-color: #555;
+}
+
+#suppliers {
+    top: 260px;
+    background-color: #aa0465;
+}
