@@ -1,14 +1,58 @@
 .btn {
+    width: 300px;
     border: none;
+    border-radius: 8px;
     padding: 14px 28px;
     color: white;
     cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    font-size: large;
 }
 
-.default {
+.btn-default {
     background-color: #e7e7e7;
+    color: #111;
+    display: block;
 }
 
-.success {
+.btn-default:hover {
+    background: #ddd;
+}
+
+.btn-save {
     background-color: #04aa6d;
+}
+
+.btn-success {
+    background-color: #04aa6d;
+}
+
+.btn-success:hover {
+    background: #46a049;
+}
+
+.btn-info {
+    background-color: #2196f3;
+}
+
+.btn-info:hover {
+    background: #0b7daa;
+}
+
+.btn-warning {
+    background-color: #ff9800;
+    display: inline-block;
+}
+
+.btn-warning:hover {
+    background: #e68a00;
+}
+
+.btn-danger {
+    background-color: #f44336;
+}
+
+.btn-danger:hover {
+    background: #da190b;
 }

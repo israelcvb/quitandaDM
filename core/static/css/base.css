@@ -1,65 +1,62 @@
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
-    padding: 0;
-    font-family: "Lato", sans-serif;
+    font-family: Arial, Helvetica, sans-serif;
 }
 
-.sidenav {
-    height: 100%;
-    width: 160px;
+.header {
+    text-align: center;
+    background-color: #f1f1f1;
     position: fixed;
-    padding-top: 20px;
-    overflow: hidden;
+    top: 0;
+    width: 100%;
+    padding-left: 200px;
+}
+.sidenav {
+    background-color: #111;
+    width: 170px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
     z-index: 1;
+    overflow-x: hidden;
 }
 
-.content {
-    margin-left: 160px;
-    padding: 0px 10px;
+.sidenav a {
+    padding: 6px 8px 6px 8px;
+    text-decoration: none;
+    font-size: 20px;
+    color: #818181;
+    display: block;
+}
+
+.sidenav a:hover {
+    color: #f1f1f1;
 }
 
 @media screen and (max-height: 450px) {
-    .sidenav {padding-top: 15px;}
-    .sidenav a {font-size: 18px;}
+    .sidenav {
+        padding: 15px;
+    }
+
+    .sidenav a {
+        font-size: 18px
+    }
 }
 
-#mySidenav a {
-    position: absolute;
-    left: -140px;
-    transition: 0.3s;
-    padding: 15px;
+.content {
+    padding-top: 70px;
+}
+
+.footer {
+    padding-left: 200px;
     width: 100%;
-    text-decoration: none;
-    font-size: 20px;
+    text-align: center;
+    position: absolute;
+    background-color: #111;
     color: white;
-    border-radius: 0 5px 5px 0;
-}
-
-#mySidenav a:hover {
-    left: 0;
-}
-
-#home {
-    top: 20px;
-    background-color: #04aa6d;
-}
-
-#clients {
-    top: 80px;
-    background-color: #2196f3;
-}
-
-#products {
-    top: 140px;
-    background-color: #f44336;
-}
-
-#sales {
-    top: 200px;
-    background-color: #555;
-}
-
-#suppliers {
-    top: 260px;
-    background-color: #aa0465;
 }

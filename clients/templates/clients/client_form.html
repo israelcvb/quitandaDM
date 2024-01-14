@@ -1,15 +1,18 @@
 {% extends 'core/base.html' %}
 {% load static %}
 {% block links %}
-  <link rel="stylesheet" href="{% static 'css/forms.css' %}" />
+<link rel="stylesheet" href="{% static 'css/forms.css' %}">
+{% endblock %}
+{% block header %}
+  <h1>Editando cliente</h1>
 {% endblock %}
 {% block content %}
-  <form method="post">
+  <form class="form-container" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
     <div>
-    <h2>Cliente</h2>
-      {% csrf_token %}
-      {{ form.as_p }}
-      <button type="submit">Salvar</button>
-</div>
+      <input class="btn btn-save" type="submit" value="Salvar" />
+      <a class="btn btn-warning" href="{% url 'clients:index' %}">Cancelar</a>
+    </div>
   </form>
 {% endblock %}

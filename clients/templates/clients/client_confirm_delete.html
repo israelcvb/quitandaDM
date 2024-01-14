@@ -1,0 +1,20 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block links %}
+  <link rel="stylesheet" href="{% static 'css/forms.css' %}" />
+{% endblock %}
+{% block header %}
+  <h1>Tem certeza?</h1>
+{% endblock %}
+{% block content %}
+  <p>Você tem certeza que quer remover o cliente "{{ context }}"?</p>
+  <form method="post" style="height: 800px;">
+    {% csrf_token %}
+    {{ form }}
+    <div>
+      <input class="btn btn-danger" type="submit" value="Sim, eu tenho certeza" />
+      <a class="btn btn-warning" href="{% url 'clients:index' %}">Não, me leve de volta</a>
+    </div>
+  </form>
+{% endblock %}

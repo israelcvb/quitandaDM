@@ -1,35 +1,40 @@
 {% extends 'core/base.html' %}
 {% load static %}
 {% block links %}
-    <link rel="stylesheet" href="{% static "css/tables.css" %}">
+  <link rel="stylesheet" href="{% static 'css/tables.css' %}" />
+{% endblock %}
+{% block header %}
+  <h1>Clientes</h1>
 {% endblock %}
 {% block content %}
-  <div>
-    <a href="{% url 'clients:add' %}" class="button button-add">Cadastrar novo cliente</a>
+  <div style="margin-top: 15px;">
+    <a class="btn btn-default" href="{% url 'clients:add' %}">Novo cliente</a>
   </div>
-  <table>
-    <tr>
-      <th>Nome</th>
-      <th>Endereço</th>
-      <th>Email</th>
-      <th>Telefone</th>
-      <th>Data da última compra</th>
-      <th>Status</th>
-      <th>Ação</th>
-    </tr>
-    {% for client in object_list %}
+  <div style="margin-top: 15px;">
+    <table>
       <tr>
-        <td>{{ client.name }}</td>
-        <td>{{ client.address }}</td>
-        <td>{{ client.email }}</td>
-        <td>{{ client.phone }}</td>
-        <td>{{ client.last_purchase_date }}</td>
-        <td>{{ client.status }}</td>
-        <td>
-          <a href="{% url 'clients:client' client.pk %}">Detalhe</a>
-          <a href="#" class="link-add">Editar</a>
-        </td>
+        <th>Nome</th>
+        <th>Endereço</th>
+        <th>Email</th>
+        <th>Telefone</th>
+        <th>Data da última compra</th>
+        <th>Status</th>
+        <th>Ação</th>
       </tr>
-    {% endfor %}
-  </table>
+      {% for client in object_list %}
+        <tr>
+          <td>{{ client.name }}</td>
+          <td>{{ client.address }}</td>
+          <td>{{ client.email }}</td>
+          <td>{{ client.phone }}</td>
+          <td>{{ client.last_purchase_date }}</td>
+          <td>{{ client.status }}</td>
+          <td>
+            <a href="{% url 'clients:client' client.pk %}">Detalhe</a>
+            <a href="{% url 'clients:delete' client.pk %}">Excluir</a>
+          </td>
+        </tr>
+      {% endfor %}
+    </table>
+  </div>
 {% endblock %}

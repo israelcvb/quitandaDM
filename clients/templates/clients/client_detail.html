@@ -1,6 +1,9 @@
 {% extends 'core/base.html' %}
-
+{% block header %}
+<h1>Cliente</h1>
+{% endblock  %}
 {% block content %}
+<div>
   <p>Nome: {{ object.name }}</p>
   <p>Data de nascimento: {{ object.birth_date }}</p>
   <p>Gênero: {{ object.gender }}</p>
@@ -10,5 +13,8 @@
   <p>Data da última compra: {{ object.last_purchase_date }}</p>
   <p>Status: {{ object.status }}</p>
   <p>Ocorrências: {{ object.occurrences }}</p>
-  <a href="{% url 'clients:change' object.pk %}" class="btn default">Editar</a>
+</div>
+  <div style="background-color: black; height: 500px;">
+  <a class="btn btn-success" href="{% url 'clients:change' object.pk %}">Editar</a>
+</div>
 {% endblock %}

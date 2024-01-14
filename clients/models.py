@@ -24,7 +24,7 @@ class Client(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     last_purchase_date = models.DateField("data da última compra", null=True)
     status = models.CharField(max_length=1, choices=STATUS, null=True)
-    occurrences = models.TextField("ocorrências", max_length=1024, null=True)
+    occurrences = models.TextField("ocorrências", max_length=1024, null=True, blank=True)
 
     def __str__(self):
         return self.name
